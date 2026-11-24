@@ -1,0 +1,1786 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>兔崽baby推特大赛 - 官方视频门户 | 原创影像创作社区</title>
+<meta name="description" content="兔崽baby推特大赛官方网站，专注原创视频创作与社区互动的影像平台，汇聚创作者、精品内容与企业级内容生态，记录每一次真实表达。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c2334d'/%3E%3Cpath d='M20 44V20l12 10 12-10v24' fill='none' stroke='%23fff' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --tb-ink:#161012;
+  --tb-paper:#fdf9f8;
+  --tb-red:#c2334d;
+  --tb-red-deep:#8e1f36;
+  --tb-cream:#fff2ee;
+  --tb-line:#e7d9d6;
+  --tb-gray:#6d6164;
+  --tb-black:#0e0a0b;
+  --tb-radius:14px;
+  --tb-shadow:0 10px 30px rgba(20,10,12,.10);
+  --tb-sticky:112px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  color:var(--tb-ink);
+  background:var(--tb-paper);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;line-height:1.3;font-weight:800;letter-spacing:.2px}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+
+/* ============ 公告条 + 页头 吸顶 ============ */
+.tb-topwrap{position:sticky;top:0;z-index:80}
+.tb-notice{
+  background:var(--tb-black);
+  color:#ffe7e1;
+  font-size:13px;
+  letter-spacing:.3px;
+}
+.tb-notice-inner{
+  max-width:1200px;margin:0 auto;padding:8px 20px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.tb-notice-tag{
+  background:var(--tb-red);color:#fff;font-weight:700;
+  padding:1px 9px;border-radius:20px;font-size:12px;flex:none;
+}
+.tb-notice-list{display:flex;gap:22px;flex-wrap:wrap}
+.tb-notice-list li{opacity:.92;display:flex;align-items:center;gap:6px}
+.tb-notice-list li::before{content:"◆";color:var(--tb-red);font-size:8px}
+.tb-notice-more{margin-left:auto;color:#ffb9ae;font-size:12.5px;font-weight:600;white-space:nowrap}
+.tb-notice-more:hover{color:#fff}
+
+.tb-header{
+  background:rgba(253,249,248,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--tb-line);
+}
+.tb-header-inner{
+  max-width:1200px;margin:0 auto;padding:0 20px;
+  height:64px;display:flex;align-items:center;gap:18px;
+}
+.tb-logo{display:flex;align-items:center;gap:10px;flex:none}
+.tb-logo-mark{
+  width:38px;height:38px;border-radius:11px;background:var(--tb-red);
+  display:grid;place-items:center;color:#fff;font-weight:900;font-size:17px;
+  box-shadow:0 4px 14px rgba(194,51,77,.35);
+}
+.tb-logo-txt{display:flex;flex-direction:column;line-height:1.15}
+.tb-logo-txt b{font-size:16.5px;letter-spacing:.5px}
+.tb-logo-txt span{font-size:10.5px;color:var(--tb-gray);letter-spacing:1.4px}
+.tb-nav{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap}
+.tb-nav a{
+  padding:7px 12px;border-radius:8px;font-size:14px;font-weight:600;color:#3d3234;
+  transition:.2s;white-space:nowrap;
+}
+.tb-nav a:hover{background:var(--tb-cream);color:var(--tb-red)}
+.tb-head-actions{margin-left:auto;display:flex;align-items:center;gap:10px}
+.tb-search{
+  display:flex;align-items:center;background:#fff;border:1px solid var(--tb-line);
+  border-radius:10px;padding:0 10px;height:38px;width:216px;transition:.25s;
+}
+.tb-search:focus-within{border-color:var(--tb-red);box-shadow:0 0 0 3px rgba(194,51,77,.12)}
+.tb-search input{border:0;outline:0;background:transparent;font-size:13.5px;flex:1;min-width:0;font-family:inherit;color:var(--tb-ink)}
+.tb-search button{border:0;background:transparent;cursor:pointer;color:var(--tb-red);font-size:13px;font-weight:700;padding:2px 0 2px 6px}
+.tb-btn{
+  border:0;cursor:pointer;font-family:inherit;font-weight:700;font-size:14px;
+  padding:9px 18px;border-radius:10px;transition:.22s;display:inline-flex;align-items:center;gap:7px;
+}
+.tb-btn-primary{background:var(--tb-red);color:#fff;box-shadow:0 6px 18px rgba(194,51,77,.28)}
+.tb-btn-primary:hover{background:var(--tb-red-deep);transform:translateY(-1px)}
+.tb-btn-ghost{background:#fff;color:var(--tb-ink);border:1px solid var(--tb-line)}
+.tb-btn-ghost:hover{border-color:var(--tb-red);color:var(--tb-red)}
+.tb-burger{
+  display:none;border:1px solid var(--tb-line);background:#fff;border-radius:9px;
+  width:40px;height:38px;font-size:18px;cursor:pointer;color:var(--tb-ink);
+}
+.tb-mobile-nav{display:none;border-top:1px solid var(--tb-line);background:#fff;padding:8px 20px 16px}
+.tb-mobile-nav.open{display:block}
+.tb-mobile-nav a{display:block;padding:10px 4px;font-weight:600;border-bottom:1px dashed var(--tb-line)}
+.tb-mobile-nav a:last-child{border-bottom:0}
+
+/* ============ 通用 ============ */
+.tb-section{max-width:1200px;margin:0 auto;padding:64px 20px;scroll-margin-top:var(--tb-sticky)}
+.tb-sec-head{margin-bottom:32px;max-width:760px}
+.tb-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;
+  color:var(--tb-red);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;
+}
+.tb-eyebrow::before{content:"";width:22px;height:3px;background:var(--tb-red);border-radius:2px}
+.tb-h2{font-size:clamp(24px,3.4vw,36px);letter-spacing:-.5px}
+.tb-h2 em{font-style:normal;color:var(--tb-red)}
+.tb-sec-desc{margin-top:12px;color:var(--tb-gray);font-size:15px}
+
+/* ============ 首屏 ============ */
+.tb-hero{
+  background:
+    radial-gradient(900px 420px at 88% -10%,rgba(194,51,77,.12),transparent 65%),
+    linear-gradient(180deg,#fff6f3 0%,var(--tb-paper) 78%);
+  border-bottom:1px solid var(--tb-line);
+  scroll-margin-top:var(--tb-sticky);
+}
+.tb-hero-inner{
+  max-width:1200px;margin:0 auto;padding:56px 20px 66px;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;
+}
+.tb-hero-badge{
+  display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--tb-line);
+  padding:5px 14px;border-radius:30px;font-size:12.5px;font-weight:700;color:var(--tb-red-deep);
+  box-shadow:0 2px 10px rgba(20,10,12,.05);
+}
+.tb-hero-badge i{width:7px;height:7px;border-radius:50%;background:var(--tb-red);animation:tb-pulse 1.8s infinite}
+@keyframes tb-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
+.tb-h1{
+  font-size:clamp(34px,5.2vw,58px);
+  letter-spacing:-1.5px;margin:16px 0 0;line-height:1.14;
+}
+.tb-h1 .tb-h1-kw{color:var(--tb-red);position:relative;white-space:nowrap}
+.tb-h1 .tb-h1-kw::after{
+  content:"";position:absolute;left:0;right:0;bottom:4px;height:10px;
+  background:rgba(194,51,77,.16);border-radius:4px;z-index:-1;
+}
+.tb-hero-lead{margin-top:18px;font-size:16.5px;color:#4a3e41;max-width:560px}
+.tb-intro{
+  margin-top:20px;font-size:14.5px;color:var(--tb-gray);
+  border-left:3px solid var(--tb-red);padding-left:16px;max-width:560px;
+}
+.tb-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:26px;max-width:560px}
+.tb-stat{
+  background:#fff;border:1px solid var(--tb-line);border-radius:12px;padding:12px 14px;
+}
+.tb-stat b{display:block;font-size:23px;letter-spacing:-.5px;color:var(--tb-red-deep)}
+.tb-stat span{font-size:12px;color:var(--tb-gray);font-weight:600}
+.tb-hero-cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.tb-hero-visual{
+  position:relative;border-radius:20px;overflow:hidden;
+  box-shadow:var(--tb-shadow);border:1px solid #f0dcd7;background:#240f14;
+}
+.tb-hero-visual .tb-hero-img{aspect-ratio:5/4}
+.tb-hero-visual .tb-hero-img svg{width:100%;height:100%}
+.tb-hero-play{
+  position:absolute;left:20px;bottom:20px;right:20px;
+  display:flex;align-items:center;gap:12px;color:#fff;
+  background:linear-gradient(90deg,rgba(14,10,11,.82),rgba(14,10,11,.18));
+  padding:12px 16px;border-radius:12px;backdrop-filter:blur(4px);
+}
+.tb-hero-play .tb-play-ico{
+  width:40px;height:40px;border-radius:50%;background:var(--tb-red);display:grid;place-items:center;
+  font-size:15px;flex:none;box-shadow:0 0 0 6px rgba(194,51,77,.24);
+}
+.tb-hero-play b{display:block;font-size:14px}
+.tb-hero-play span{font-size:11.5px;opacity:.75}
+.tb-hero-flag{
+  position:absolute;top:16px;left:16px;background:#fff;border-radius:8px;
+  font-size:11.5px;font-weight:800;padding:5px 11px;color:var(--tb-red-deep);letter-spacing:.5px;
+}
+
+/* ============ 焦点内容 ============ */
+.tb-focus-grid{display:grid;grid-template-columns:1.35fr .95fr;gap:28px;align-items:start}
+.tb-focus-main{
+  background:#fff;border:1px solid var(--tb-line);border-radius:var(--tb-radius);
+  overflow:hidden;transition:.25s;height:100%;
+}
+.tb-focus-main:hover{box-shadow:var(--tb-shadow);transform:translateY(-3px)}
+.tb-focus-main .tb-figure{aspect-ratio:16/9;position:relative}
+.tb-focus-main .tb-figure svg{width:100%;height:100%}
+.tb-figure-tag{
+  position:absolute;top:12px;left:12px;background:var(--tb-red);color:#fff;
+  font-size:11.5px;font-weight:800;padding:4px 11px;border-radius:6px;letter-spacing:.5px;
+}
+.tb-figure-len{
+  position:absolute;bottom:12px;right:12px;background:rgba(14,10,11,.78);color:#fff;
+  font-size:11.5px;padding:3px 9px;border-radius:5px;font-variant-numeric:tabular-nums;
+}
+.tb-focus-body{padding:20px 22px 22px}
+.tb-focus-body h3{font-size:20px;letter-spacing:-.3px}
+.tb-focus-body p{margin-top:9px;font-size:14px;color:var(--tb-gray)}
+.tb-chiprow{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}
+.tb-chip{
+  font-size:11.5px;font-weight:700;color:var(--tb-red-deep);background:var(--tb-cream);
+  padding:3px 10px;border-radius:20px;border:1px solid #f3d9d2;
+}
+.tb-meta-row{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:16px;
+  padding-top:14px;border-top:1px dashed var(--tb-line);font-size:12.5px;color:var(--tb-gray);
+}
+.tb-meta-row b{color:var(--tb-ink);font-weight:700}
+.tb-mini-actions{display:flex;gap:8px;margin-left:auto}
+.tb-ico-btn{
+  border:1px solid var(--tb-line);background:#fff;border-radius:8px;cursor:pointer;
+  font-family:inherit;font-size:12.5px;font-weight:700;color:#5b4d50;padding:5px 10px;
+  display:inline-flex;align-items:center;gap:5px;transition:.18s;
+}
+.tb-ico-btn:hover{border-color:var(--tb-red);color:var(--tb-red)}
+.tb-ico-btn.liked{background:var(--tb-red);border-color:var(--tb-red);color:#fff}
+.tb-ico-btn.saved{background:#fff;border-color:var(--tb-red);color:var(--tb-red)}
+.tb-focus-side{display:flex;flex-direction:column;gap:14px}
+.tb-side-item{
+  background:#fff;border:1px solid var(--tb-line);border-radius:12px;padding:15px 17px;
+  display:flex;gap:13px;transition:.2s;min-width:0;
+}
+.tb-side-item:hover{border-color:#eac4bb;transform:translateX(3px)}
+.tb-side-num{
+  font-size:19px;font-weight:900;color:#e9d3ce;letter-spacing:-1px;flex:none;font-style:italic;
+}
+.tb-side-item h3{font-size:14.5px;line-height:1.45}
+.tb-side-item p{font-size:12.5px;color:var(--tb-gray);margin-top:5px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tb-side-foot{font-size:11.5px;color:#9a8c8f;margin-top:7px;display:flex;gap:10px;flex-wrap:wrap}
+
+/* ============ 视频流列表 ============ */
+.tb-video-panel{
+  background:#fff;border:1px solid var(--tb-line);border-radius:16px;overflow:hidden;
+}
+.tb-video-toolbar{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:14px 18px;border-bottom:1px solid var(--tb-line);background:#fffaf8;
+}
+.tb-filter{
+  border:1px solid var(--tb-line);background:#fff;border-radius:20px;padding:5px 14px;
+  font-size:12.5px;font-weight:700;color:#5b4d50;cursor:pointer;font-family:inherit;transition:.18s;
+}
+.tb-filter:hover{border-color:var(--tb-red);color:var(--tb-red)}
+.tb-filter.active{background:var(--tb-red);border-color:var(--tb-red);color:#fff}
+.tb-video-hint{margin-left:auto;font-size:12px;color:var(--tb-gray)}
+.tb-vlist{display:flex;flex-direction:column}
+.tb-vrow{
+  display:grid;grid-template-columns:178px 1fr;gap:18px;padding:18px;border-bottom:1px solid #f4eae8;
+  transition:.2s;align-items:start;
+}
+.tb-vrow:last-child{border-bottom:0}
+.tb-vrow:hover{background:#fffaf9}
+.tb-vrow-thumb{aspect-ratio:16/10;border-radius:10px;overflow:hidden;position:relative;background:#f6e7e3}
+.tb-vrow-thumb svg{width:100%;height:100%}
+.tb-vrow-body{min-width:0}
+.tb-vrow-body h3{font-size:16px;letter-spacing:-.2px}
+.tb-vrow-body>p{font-size:13.5px;color:var(--tb-gray);margin-top:6px}
+.tb-vrow-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:11px;font-size:12px;color:#8c7d80}
+.tb-vrow-meta .tb-author-mini{display:inline-flex;align-items:center;gap:6px;color:#4a3e41;font-weight:700}
+.tb-avatar{
+  width:22px;height:22px;border-radius:50%;display:grid;place-items:center;
+  font-size:10.5px;font-weight:800;color:#fff;flex:none;letter-spacing:0;
+}
+.tb-vrow-video-hidden{display:none}
+
+/* ============ 专题企划 ============ */
+.tb-topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.tb-topic{
+  background:#fff;border:1px solid var(--tb-line);border-radius:var(--tb-radius);
+  padding:22px;display:flex;flex-direction:column;gap:14px;transition:.22s;
+}
+.tb-topic:hover{box-shadow:var(--tb-shadow);transform:translateY(-3px);border-color:#e8c6be}
+.tb-topic-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.tb-topic h3{font-size:18px;letter-spacing:-.3px}
+.tb-state{
+  font-size:11px;font-weight:800;padding:3px 9px;border-radius:20px;white-space:nowrap;flex:none;
+}
+.tb-state.on{background:#eaf7ee;color:#1c7a44}
+.tb-state.warm{background:#fff4e2;color:#a46813}
+.tb-topic>p{font-size:13px;color:var(--tb-gray)}
+.tb-topic-list{border-top:1px dashed var(--tb-line);padding-top:12px;display:flex;flex-direction:column;gap:9px}
+.tb-topic-list li{font-size:13px;display:flex;gap:8px;align-items:flex-start;color:#40343 7}
+.tb-topic-list li::before{content:"▸";color:var(--tb-red);font-weight:900;flex:none}
+.tb-topic-foot{margin-top:auto;font-size:12px;color:#9a8c8f;display:flex;justify-content:space-between}
+
+/* ============ 关键词解析 / 品牌故事 ============ */
+.tb-deep{
+  background:linear-gradient(180deg,#fff 0%,#fff8f6 100%);
+  border-top:1px solid var(--tb-line);border-bottom:1px solid var(--tb-line);
+}
+.tb-deep-inner{max-width:1200px;margin:0 auto;padding:64px 20px}
+.tb-deep-layout{display:grid;grid-template-columns:1fr 320px;gap:44px;align-items:start}
+.tb-article h3{font-size:19px;margin-top:28px;margin-bottom:10px;color:var(--tb-red-deep)}
+.tb-article h3:first-child{margin-top:0}
+.tb-article p{font-size:14.8px;color:#463a3d;margin-bottom:12px;text-align:justify}
+.tb-article p b{color:var(--tb-ink)}
+.tb-deep-aside{
+  background:#fff;border:1px solid var(--tb-line);border-radius:var(--tb-radius);
+  padding:22px;position:sticky;top:calc(var(--tb-sticky) + 20px);
+}
+.tb-deep-aside h3{font-size:15px;margin-bottom:14px;letter-spacing:.5px}
+.tb-timeline{display:flex;flex-direction:column;gap:0}
+.tb-timeline li{position:relative;padding:0 0 18px 24px;border-left:2px solid #f2dcd6}
+.tb-timeline li:last-child{border-left-color:transparent;padding-bottom:0}
+.tb-timeline li::before{
+  content:"";position:absolute;left:-6px;top:4px;width:10px;height:10px;border-radius:50%;
+  background:var(--tb-red);box-shadow:0 0 0 3px #fff;
+}
+.tb-timeline b{display:block;font-size:13.5px}
+.tb-timeline span{font-size:12px;color:var(--tb-gray);display:block;margin-top:2px;line-height:1.6}
+.tb-aside-note{
+  margin-top:16px;background:var(--tb-cream);border-radius:10px;padding:12px 14px;
+  font-size:12.5px;color:#7a4a44;line-height:1.7;
+}
+
+/* ============ 创作者矩阵（双列简介） ============ */
+.tb-author-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.tb-author{
+  background:#fff;border:1px solid var(--tb-line);border-radius:var(--tb-radius);
+  padding:20px;display:flex;gap:16px;transition:.22s;align-items:flex-start;
+}
+.tb-author:hover{box-shadow:var(--tb-shadow);border-color:#e8c6be}
+.tb-avatar-lg{
+  width:64px;height:64px;border-radius:16px;display:grid;place-items:center;flex:none;
+  font-size:22px;font-weight:900;color:#fff;letter-spacing:0;
+}
+.tb-author-body{min-width:0;flex:1}
+.tb-author-body h3{font-size:16.5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tb-verify{
+  font-size:10.5px;font-weight:800;color:#fff;background:var(--tb-red);
+  padding:1px 7px;border-radius:20px;letter-spacing:0;
+}
+.tb-author-field{font-size:12px;color:var(--tb-red-deep);font-weight:700;margin-top:3px}
+.tb-author-body p{font-size:13px;color:var(--tb-gray);margin-top:9px}
+.tb-author-nums{display:flex;gap:16px;margin-top:11px;font-size:12px;color:#8c7d80}
+.tb-author-nums b{color:var(--tb-ink);font-weight:800}
+.tb-author-more{
+  margin-top:12px;font-size:12.5px;font-weight:700;color:var(--tb-red);
+  background:none;border:0;cursor:pointer;font-family:inherit;padding:0;
+}
+.tb-author-more:hover{text-decoration:underline}
+
+/* ============ 评论（双列短评 + 评分摘要） ============ */
+.tb-comment-wrap{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
+.tb-score-card{
+  background:var(--tb-black);color:#fff;border-radius:var(--tb-radius);padding:24px 22px;
+}
+.tb-score-card h3{font-size:14px;color:#e8c9c2;letter-spacing:1px;font-weight:700}
+.tb-score-big{font-size:52px;font-weight:900;letter-spacing:-2px;line-height:1;margin:10px 0 2px;color:#fff}
+.tb-score-big small{font-size:16px;font-weight:600;color:#a9928d;letter-spacing:0}
+.tb-score-bar{height:6px;border-radius:4px;background:#33262a;margin-top:14px;overflow:hidden}
+.tb-score-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--tb-red),#f4867c);border-radius:4px}
+.tb-score-dims{margin-top:16px;display:flex;flex-direction:column;gap:9px}
+.tb-score-dims div{display:flex;justify-content:space-between;font-size:12.5px;color:#cbb6b1}
+.tb-score-dims b{color:#fff}
+.tb-comment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.tb-comment{
+  background:#fff;border:1px solid var(--tb-line);border-radius:12px;padding:16px 17px;
+  display:flex;flex-direction:column;gap:9px;transition:.2s;
+}
+.tb-comment:hover{border-color:#e8c6be;transform:translateY(-2px)}
+.tb-comment-top{display:flex;align-items:center;gap:9px}
+.tb-comment-top b{font-size:13.5px}
+.tb-comment-stars{color:#e0a32e;font-size:11.5px;letter-spacing:1px;margin-left:auto}
+.tb-comment p{font-size:13px;color:#4a3e41}
+.tb-comment-meta{font-size:11.5px;color:#a3949 7;display:flex;gap:10px}
+.tb-comment-meta{color:#9a8c8f}
+
+/* ============ 企业动态 / 合作 / FAQ ============ */
+.tb-aux-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:start}
+.tb-news{background:#fff;border:1px solid var(--tb-line);border-radius:var(--tb-radius);padding:22px}
+.tb-news h3{font-size:17px;margin-bottom:14px}
+.tb-news-list li{
+  padding:13px 0;border-bottom:1px dashed var(--tb-line);display:flex;gap:14px;align-items:flex-start;
+}
+.tb-news-list li:last-child{border-bottom:0;padding-bottom:0}
+.tb-news-date{
+  font-size:11.5px;font-weight:800;color:var(--tb-red-deep);flex:none;width:52px;
+  background:var(--tb-cream);border-radius:6px;text-align:center;padding:3px 0;line-height:1.5;
+}
+.tb-news-list b{display:block;font-size:13.8px;line-height:1.5}
+.tb-news-list span{font-size:12.5px;color:var(--tb-gray);display:block;margin-top:3px}
+.tb-partners{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tb-partner{
+  background:#fff;border:1px solid var(--tb-line);border-radius:11px;padding:14px 16px;
+  display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700;transition:.2s;
+}
+.tb-partner:hover{border-color:var(--tb-red);color:var(--tb-red)}
+.tb-partner i{
+  width:26px;height:26px;border-radius:7px;flex:none;display:grid;place-items:center;
+  font-size:11px;color:#fff;font-style:normal;font-weight:900;
+}
+.tb-faq{max-width:900px;margin:0 auto}
+.tb-faq details{
+  background:#fff;border:1px solid var(--tb-line);border-radius:12px;margin-bottom:11px;
+  overflow:hidden;transition:.2s;
+}
+.tb-faq details[open]{border-color:var(--tb-red);box-shadow:0 6px 20px rgba(194,51,77,.09)}
+.tb-faq summary{
+  list-style:none;cursor:pointer;padding:15px 18px;font-weight:700;font-size:14.5px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.tb-faq summary::-webkit-details-marker{display:none}
+.tb-faq summary::after{content:"+";color:var(--tb-red);font-size:19px;font-weight:600;flex:none;line-height:1}
+.tb-faq details[open] summary::after{content:"−"}
+.tb-faq details p{padding:0 18px 16px;font-size:13.5px;color:var(--tb-gray)}
+
+/* ============ 投稿条 ============ */
+.tb-cta{
+  max-width:1200px;margin:0 auto 0;padding:0 20px 64px;
+}
+.tb-cta-box{
+  background:
+    radial-gradient(600px 220px at 92% 0%,rgba(194,51,77,.35),transparent 70%),
+    linear-gradient(120deg,#231116,#3d1a24 60%,#5b1f2e);
+  border-radius:20px;padding:40px;color:#fff;display:flex;align-items:center;gap:28px;
+  justify-content:space-between;flex-wrap:wrap;box-shadow:var(--tb-shadow);
+}
+.tb-cta-box h2{font-size:clamp(22px,3vw,30px);letter-spacing:-.5px}
+.tb-cta-box p{margin-top:9px;font-size:14px;color:#e2c8c3;max-width:560px}
+.tb-cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.tb-cta .tb-btn-ghost{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.28)}
+.tb-cta .tb-btn-ghost:hover{background:rgba(255,255,255,.16);color:#fff;border-color:#fff}
+
+/* ============ 页脚 ============ */
+.tb-footer{background:var(--tb-black);color:#cbb9b5;padding:52px 20px 26px;font-size:13px}
+.tb-footer-inner{max-width:1200px;margin:0 auto}
+.tb-footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+.tb-footer-brand b{font-size:17px;color:#fff;letter-spacing:.5px;display:block}
+.tb-footer-brand span{display:block;font-size:11px;letter-spacing:2px;color:#8f7c79;margin-top:4px}
+.tb-footer-brand p{margin-top:14px;line-height:1.8;color:#a08e8b;font-size:12.5px;max-width:320px}
+.tb-footer h4{color:#fff;font-size:13.5px;margin-bottom:13px;letter-spacing:.5px}
+.tb-footer ul li{margin-bottom:9px;font-size:12.5px}
+.tb-footer ul li a:hover{color:#fff}
+.tb-footer-bottom{
+  margin-top:34px;padding-top:20px;border-top:1px solid #2a1f21;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:#877572;
+}
+
+/* ============ Toast / 弹窗 / 回顶 ============ */
+.tb-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:var(--tb-black);color:#fff;padding:11px 22px;border-radius:30px;
+  font-size:13.5px;font-weight:600;opacity:0;pointer-events:none;transition:.28s;z-index:200;
+  box-shadow:0 12px 34px rgba(0,0,0,.3);
+}
+.tb-toast.show{opacity:1;transform:translate(-50%,0)}
+.tb-modal-mask{
+  position:fixed;inset:0;background:rgba(14,10,11,.55);backdrop-filter:blur(3px);
+  z-index:180;display:none;align-items:center;justify-content:center;padding:20px;
+}
+.tb-modal-mask.open{display:flex}
+.tb-modal{
+  background:#fff;border-radius:18px;max-width:480px;width:100%;padding:26px;
+  box-shadow:0 24px 60px rgba(0,0,0,.3);max-height:86vh;overflow:auto;
+}
+.tb-modal h3{font-size:18px;margin-bottom:6px}
+.tb-modal .tb-modal-sub{font-size:13px;color:var(--tb-gray);margin-bottom:16px}
+.tb-modal label{display:block;font-size:12.5px;font-weight:700;margin:12px 0 6px}
+.tb-modal input,.tb-modal textarea,.tb-modal select{
+  width:100%;border:1px solid var(--tb-line);border-radius:9px;padding:10px 12px;
+  font-family:inherit;font-size:13.5px;outline:0;background:#fffaf9;color:var(--tb-ink);
+}
+.tb-modal input:focus,.tb-modal textarea:focus,.tb-modal select:focus{
+  border-color:var(--tb-red);box-shadow:0 0 0 3px rgba(194,51,77,.12);
+}
+.tb-modal-foot{display:flex;gap:10px;margin-top:20px}
+.tb-modal-foot .tb-btn{flex:1;justify-content:center}
+.tb-share-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.tb-share-row button{
+  border:1px solid var(--tb-line);background:#fff;border-radius:10px;padding:13px 6px;
+  font-family:inherit;font-size:12.5px;font-weight:700;cursor:pointer;transition:.18s;
+}
+.tb-share-row button:hover{border-color:var(--tb-red);color:var(--tb-red)}
+.tb-totop{
+  position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;
+  background:var(--tb-red);color:#fff;border:0;font-size:18px;cursor:pointer;z-index:120;
+  box-shadow:0 10px 24px rgba(194,51,77,.4);opacity:0;pointer-events:none;transition:.25s;
+}
+.tb-totop.show{opacity:1;pointer-events:auto}
+.tb-totop:hover{transform:translateY(-3px)}
+
+/* ============ 响应式 ============ */
+@media (max-width:1000px){
+  :root{--tb-sticky:100px}
+  .tb-hero-inner{grid-template-columns:1fr;gap:34px;padding-top:40px}
+  .tb-hero-visual{order:-1;max-width:640px}
+  .tb-focus-grid{grid-template-columns:1fr}
+  .tb-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tb-deep-layout{grid-template-columns:1fr;gap:28px}
+  .tb-deep-aside{position:static}
+  .tb-comment-wrap{grid-template-columns:1fr}
+  .tb-aux-grid{grid-template-columns:1fr}
+  .tb-footer-top{grid-template-columns:1fr 1fr;gap:26px}
+  .tb-nav{display:none}
+  .tb-search{width:170px}
+}
+@media (max-width:760px){
+  :root{--tb-sticky:98px}
+  .tb-burger{display:block}
+  .tb-head-actions .tb-btn-primary{display:none}
+  .tb-header-inner{height:58px;padding:0 14px;gap:10px}
+  .tb-search{width:auto;flex:1;min-width:0;height:36px}
+  .tb-search input{font-size:13px}
+  .tb-notice-inner{padding:7px 14px;font-size:12px}
+  .tb-notice-list li:nth-child(n+2){display:none}
+  .tb-notice-more{font-size:12px}
+  .tb-section{padding:46px 16px}
+  .tb-hero-inner{padding:30px 16px 46px}
+  .tb-topic-grid,.tb-author-grid,.tb-comment-grid,.tb-partners{grid-template-columns:1fr}
+  .tb-vrow{grid-template-columns:1fr;gap:12px}
+  .tb-vrow-thumb{aspect-ratio:16/9;max-width:100%}
+  .tb-stats{grid-template-columns:1fr 1fr}
+  .tb-stats .tb-stat:last-child{grid-column:span 2}
+  .tb-cta-box{padding:28px 22px}
+  .tb-footer-top{grid-template-columns:1fr}
+  .tb-totop{right:14px;bottom:14px;width:42px;height:42px}
+  .tb-mini-actions{margin-left:0}
+  .tb-hero-play{padding:10px 12px}
+  .tb-hero-play b{font-size:13px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ===================== S1 公告条 + 页头（吸顶） ===================== -->
+<div class="tb-topwrap">
+  <div class="tb-notice">
+    <div class="tb-notice-inner">
+      <span class="tb-notice-tag">官方发布</span>
+      <ul class="tb-notice-list">
+        <li>兔崽baby推特大赛 2026 秋季赛报名通道今日开启</li>
+        <li>新增「城市一分钟」命题单元，投稿截止 12 月 18 日</li>
+        <li>创作者扶持计划第 7 期名单公布，共 30 位入选</li>
+      </ul>
+      <a class="tb-notice-more" href="#tb-topic">查看全部更新 →</a>
+    </div>
+  </div>
+
+  <header class="tb-header">
+    <div class="tb-header-inner">
+      <a class="tb-logo" href="#tb-top" aria-label="兔崽baby推特大赛官方网站首页">
+        <span class="tb-logo-mark">兔</span>
+        <span class="tb-logo-txt">
+          <b>兔崽baby推特大赛</b>
+          <span>OFFICIAL VIDEO PORTAL</span>
+        </span>
+      </a>
+      <nav class="tb-nav" aria-label="主导航">
+        <a href="#tb-focus">焦点</a>
+        <a href="#tb-videos">视频</a>
+        <a href="#tb-topic">专题</a>
+        <a href="#tb-deep">深度</a>
+        <a href="#tb-authors">创作者</a>
+        <a href="#tb-comments">口碑</a>
+        <a href="#tb-aux">动态</a>
+        <a href="#tb-faq">帮助</a>
+      </nav>
+      <div class="tb-head-actions">
+        <form class="tb-search" id="tb-search-form" role="search">
+          <input type="search" id="tb-search-input" placeholder="搜索作品 / 创作者 / 专题" aria-label="站内搜索">
+          <button type="submit">搜索</button>
+        </form>
+        <button class="tb-btn tb-btn-primary" data-tb-modal="submit">我要投稿</button>
+        <button class="tb-burger" id="tb-burger" aria-label="展开移动端导航" aria-expanded="false">☰</button>
+      </div>
+    </div>
+    <div class="tb-mobile-nav" id="tb-mobile-nav">
+      <a href="#tb-focus">焦点内容</a>
+      <a href="#tb-videos">视频内容</a>
+      <a href="#tb-topic">专题企划</a>
+      <a href="#tb-deep">关键词深度解析</a>
+      <a href="#tb-authors">创作者矩阵</a>
+      <a href="#tb-comments">用户口碑</a>
+      <a href="#tb-aux">企业动态与伙伴</a>
+      <a href="#tb-faq">常见问题</a>
+      <a href="#tb-join">投稿与联系</a>
+    </div>
+  </header>
+</div>
+
+<!-- ===================== S2 品牌首屏 ===================== -->
+<section class="tb-hero" id="tb-top">
+  <div class="tb-hero-inner">
+    <div class="tb-hero-copy">
+      <span class="tb-hero-badge"><i></i>官方网站 · 2026 秋季赛进行中</span>
+      <h1 class="tb-h1">兔崽baby推特大赛<br><span class="tb-h1-kw">原创影像</span>的官方主场</h1>
+      <p class="tb-hero-lead">一个以短视频为语言、以真实表达为底色的影像创作社区。我们把镜头交给普通创作者，也把舞台留给每一个认真生活的人。</p>
+      <p class="tb-intro">作为专注于短片创作与社区共创的视频品牌，兔崽baby推特大赛官方网站持续运营高品质内容生态，聚合原创影像、创作教程、人物访谈与城市记录，为企业与创作者搭建值得信赖的展示窗口。</p>
+      <div class="tb-stats">
+        <div class="tb-stat"><b data-tb-count="128400">0</b><span>累计参赛作品（条）</span></div>
+        <div class="tb-stat"><b data-tb-count="36200">0</b><span>注册创作者（位）</span></div>
+        <div class="tb-stat"><b data-tb-count="9">0</b><span>持续运营赛季（届）</span></div>
+      </div>
+      <div class="tb-hero-cta">
+        <button class="tb-btn tb-btn-primary" data-tb-modal="submit">立即报名参赛</button>
+        <a class="tb-btn tb-btn-ghost" href="#tb-videos">浏览精品内容</a>
+        <button class="tb-btn tb-btn-ghost" data-tb-share="兔崽baby推特大赛官方网站">分享官网</button>
+      </div>
+    </div>
+    <div class="tb-hero-visual">
+      <span class="tb-hero-flag">本季主视觉 · 城市一分钟</span>
+      <div class="tb-hero-img">
+        <svg viewBox="0 0 800 640" role="img" aria-label="兔崽baby推特大赛秋季赛主视觉：夜色城市天际线与手持镜头拍摄的创作者剪影">
+          <defs>
+            <linearGradient id="tbSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#2a1020"/>
+              <stop offset="48%" stop-color="#631c31"/>
+              <stop offset="100%" stop-color="#c2334d"/>
+            </linearGradient>
+            <linearGradient id="tbBld" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#1a0c13"/>
+              <stop offset="100%" stop-color="#361421"/>
+            </linearGradient>
+            <radialGradient id="tbGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="#ffcf8a" stop-opacity=".9"/>
+              <stop offset="100%" stop-color="#ffcf8a" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="800" height="640" fill="url(#tbSky)"/>
+          <circle cx="640" cy="120" r="150" fill="url(#tbGlow)" opacity=".55"/>
+          <circle cx="640" cy="120" r="52" fill="#ffe1b0" opacity=".9"/>
+          <!-- 建筑群 -->
+          <g fill="url(#tbBld)">
+            <rect x="0" y="360" width="86" height="280"/>
+            <rect x="96" y="300" width="70" height="340"/>
+            <rect x="176" y="392" width="96" height="248"/>
+            <rect x="282" y="248" width="82" height="392"/>
+            <rect x="374" y="330" width="68" height="310"/>
+            <rect x="452" y="286" width="96" height="354"/>
+            <rect x="558" y="368" width="74" height="272"/>
+            <rect x="642" y="222" width="88" height="418"/>
+            <rect x="740" y="340" width="60" height="300"/>
+          </g>
+          <!-- 窗格灯 -->
+          <g fill="#ffcb7d" opacity=".78">
+            <rect x="112" y="322" width="10" height="12"/><rect x="132" y="322" width="10" height="12"/>
+            <rect x="112" y="350" width="10" height="12"/><rect x="132" y="350" width="10" height="12"/>
+            <rect x="300" y="272" width="10" height="12"/><rect x="322" y="272" width="10" height="12"/>
+            <rect x="300" y="300" width="10" height="12"/><rect x="322" y="300" width="10" height="12"/>
+            <rect x="300" y="328" width="10" height="12"/>
+            <rect x="470" y="310" width="10" height="12"/><rect x="492" y="310" width="10" height="12"/>
+            <rect x="470" y="338" width="10" height="12"/><rect x="514" y="338" width="10" height="12"/>
+            <rect x="662" y="248" width="12" height="14"/><rect x="690" y="248" width="12" height="14"/>
+            <rect x="662" y="280" width="12" height="14"/><rect x="690" y="280" width="12" height="14"/>
+            <rect x="662" y="312" width="12" height="14"/>
+          </g>
+          <!-- 前景镜头与创作者 -->
+          <g>
+            <ellipse cx="400" cy="618" rx="300" ry="26" fill="#180a10" opacity=".7"/>
+            <path d="M300 640v-96c0-26 20-46 46-46h108c26 0 46 20 46 46v96z" fill="#140910"/>
+            <circle cx="400" cy="452" r="42" fill="#140910"/>
+            <rect x="474" y="470" width="118" height="76" rx="12" fill="#1e0f18"/>
+            <circle cx="533" cy="508" r="26" fill="#0c0509"/>
+            <circle cx="533" cy="508" r="14" fill="var(--tb-red)"/>
+            <rect x="592" y="492" width="34" height="32" rx="6" fill="#1e0f18"/>
+          </g>
+          <!-- 光束 -->
+          <g opacity=".22" fill="#ffe9c9">
+            <path d="M566 500 L800 300 L800 380 L600 520 Z"/>
+          </g>
+        </svg>
+      </div>
+      <div class="tb-hero-play">
+        <span class="tb-play-ico">▶</span>
+        <span>
+          <b>《城市一分钟 · 深夜便利店》</b>
+          <span>2026 秋季赛开幕短片 · 4 分 12 秒 · 高清正版</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== S3 焦点内容 ===================== -->
+<section class="tb-section" id="tb-focus">
+  <div class="tb-sec-head">
+    <span class="tb-eyebrow">FOCUS · 焦点推荐</span>
+    <h2 class="tb-h2">本周<em>焦点</em>：最值得按下播放的六件作品</h2>
+    <p class="tb-sec-desc">编辑组从兔崽baby推特大赛当季投稿中挑出兼具叙事与质感的作品，涵盖城市记录、人物访谈与创作幕后。</p>
+  </div>
+
+  <div class="tb-focus-grid">
+    <article class="tb-focus-main">
+      <div class="tb-figure">
+        <span class="tb-figure-tag">编辑首选</span>
+        <span class="tb-figure-len">08:24</span>
+        <svg viewBox="0 0 800 450" role="img" aria-label="焦点作品《凌晨四点的收摊人》封面：清晨街道手推车与暖黄路灯">
+          <defs>
+            <linearGradient id="tbF1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#16202e"/><stop offset="100%" stop-color="#455b76"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="450" fill="url(#tbF1)"/>
+          <circle cx="640" cy="96" r="120" fill="#ffd79a" opacity=".14"/>
+          <circle cx="640" cy="96" r="46" fill="#ffd79a" opacity=".55"/>
+          <rect y="330" width="800" height="120" fill="#20303f"/>
+          <g fill="#0f1a24">
+            <rect x="40" y="180" width="120" height="150"/>
+            <rect x="180" y="220" width="90" height="110"/>
+            <rect x="560" y="200" width="110" height="130"/>
+            <rect x="690" y="240" width="80" height="90"/>
+          </g>
+          <g fill="#ffdca8" opacity=".8">
+            <rect x="66" y="206" width="14" height="16"/><rect x="94" y="206" width="14" height="16"/>
+            <rect x="66" y="238" width="14" height="16"/><rect x="94" y="238" width="14" height="16"/>
+            <rect x="586" y="226" width="14" height="16"/><rect x="616" y="226" width="14" height="16"/>
+          </g>
+          <!-- 路灯 -->
+          <rect x="300" y="120" width="8" height="212" fill="#0d151d"/>
+          <circle cx="304" cy="118" r="24" fill="#ffe3af" opacity=".85"/>
+          <path d="M304 118 L200 330 L408 330 Z" fill="#ffe3af" opacity=".12"/>
+          <!-- 手推车与人物 -->
+          <g>
+            <rect x="330" y="304" width="180" height="30" rx="6" fill="#c2334d"/>
+            <rect x="346" y="286" width="150" height="20" rx="5" fill="#8e1f36"/>
+            <circle cx="360" cy="348" r="16" fill="#0b1218"/>
+            <circle cx="484" cy="348" r="16" fill="#0b1218"/>
+            <circle cx="540" cy="286" r="20" fill="#0b1218"/>
+            <path d="M540 306c22 0 34 20 34 44v44h-70v-44c0-24 14-44 36-44z" fill="#0b1218"/>
+          </g>
+          <rect x="0" y="404" width="800" height="46" fill="#0a1117" opacity=".55"/>
+          <text x="40" y="432" font-family="sans-serif" font-size="20" fill="#cfe0ee" opacity=".85">凌晨四点的收摊人 / 城市一分钟单元</text>
+        </svg>
+      </div>
+      <div class="tb-focus-body">
+        <h3>《凌晨四点的收摊人》：一条街的呼吸与一千次弯腰</h3>
+        <p>作者跟着菜市场收摊人拍了 11 个夜晚，用手持镜头记录下城市最安静的四小时，没有旁白，只有环境声与被放大的细节。这是本季兔崽baby推特大赛中讨论度最高的纪实短片。</p>
+        <div class="tb-chiprow">
+          <span class="tb-chip">城市探索</span>
+          <span class="tb-chip">纪实影像</span>
+          <span class="tb-chip">高清正版</span>
+          <span class="tb-chip">赛季入围</span>
+        </div>
+        <div class="tb-meta-row">
+          <span>作者 <b>老周拍街</b></span>
+          <span>播放 <b data-tb-count="286400">0</b></span>
+          <span>点赞 <b data-tb-like="18420">18420</b></span>
+          <span>收藏 <b>6321</b></span>
+          <div class="tb-mini-actions">
+            <button class="tb-ico-btn" data-tb-like-btn>♡ 点赞</button>
+            <button class="tb-ico-btn" data-tb-save-btn>☆ 收藏</button>
+            <button class="tb-ico-btn" data-tb-share="《凌晨四点的收摊人》">↗ 分享</button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="tb-focus-side">
+      <div class="tb-side-item">
+        <span class="tb-side-num">02</span>
+        <div>
+          <h3>《我在县城开了一家只放纪录片的影院》</h3>
+          <p>一个返乡青年把废弃粮站改成 42 座的放映厅，访谈里他说：不怕没人来，只怕没人拍。</p>
+          <div class="tb-side-foot"><span>人物访谈</span><span>12:06</span><span>作者 麦穗</span></div>
+        </div>
+      </div>
+      <div class="tb-side-item">
+        <span class="tb-side-num">03</span>
+        <div>
+          <h3>《十分钟剪出电影感的五个转场》</h3>
+          <p>拆解遮挡转场、同轴线、色彩锚点等五种方法，附完整工程文件与配乐清单。</p>
+          <div class="tb-side-foot"><span>教程干货</span><span>10:42</span><span>作者 剪辑阿岚</span></div>
+        </div>
+      </div>
+      <div class="tb-side-item">
+        <span class="tb-side-num">04</span>
+        <div>
+          <h3>《奶奶的手机相册里有 3000 张天空》</h3>
+          <p>创作者翻看长辈相册，把碎片照片剪成一条关于陪伴的短片，评论区集体破防。</p>
+          <div class="tb-side-foot"><span>情感故事</span><span>06:18</span><span>作者 小满同学</span></div>
+        </div>
+      </div>
+      <div class="tb-side-item">
+        <span class="tb-side-num">05</span>
+        <div>
+          <h3>《菜市场里的色彩学》</h3>
+          <p>用配色理论解释摊位上为什么总摆着红与绿，视觉与生活在这里互相解释。</p>
+          <div class="tb-side-foot"><span>艺术美学</span><span>07:55</span><span>作者 拾色记</span></div>
+        </div>
+      </div>
+      <div class="tb-side-item">
+        <span class="tb-side-num">06</span>
+        <div>
+          <h3>《一个人的乐队：用锅碗瓢盆录一张专辑》</h3>
+          <p>创作幕后全记录，从采样到混音，一个月做出十一首短曲，附制作流程表。</p>
+          <div class="tb-side-foot"><span>创作幕后</span><span>15:30</span><span>作者 铁皮鼓手</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 视频内容列表 ===================== -->
+<section class="tb-section" id="tb-videos" style="padding-top:0">
+  <div class="tb-sec-head">
+    <span class="tb-eyebrow">VIDEOS · 视频内容</span>
+    <h2 class="tb-h2">兔崽baby推特大赛<em>视频库</em>：按题材逛逛</h2>
+    <p class="tb-sec-desc">六条近期上架的内容，覆盖教程、访谈、城市探索与情感记录。点击标签可筛选，所有作品均为创作者原创投稿。</p>
+  </div>
+
+  <div class="tb-video-panel">
+    <div class="tb-video-toolbar">
+      <button class="tb-filter active" data-tb-filter="all">全部</button>
+      <button class="tb-filter" data-tb-filter="教程">教程干货</button>
+      <button class="tb-filter" data-tb-filter="访谈">人物访谈</button>
+      <button class="tb-filter" data-tb-filter="城市">城市探索</button>
+      <button class="tb-filter" data-tb-filter="生活">生活方式</button>
+      <span class="tb-video-hint" id="tb-filter-hint">共 6 条作品</span>
+    </div>
+
+    <div class="tb-vlist" id="tb-vlist">
+      <article class="tb-vrow" data-tb-cat="教程">
+        <div class="tb-vrow-thumb">
+          <svg viewBox="0 0 400 250" role="img" aria-label="教程视频封面《五分钟学会手持运镜》：手持稳定器与运动轨迹示意">
+            <rect width="400" height="250" fill="#1b2230"/>
+            <g stroke="#c2334d" stroke-width="2" fill="none" opacity=".8">
+              <path d="M40 200 C120 90 240 90 360 60"/>
+            </g>
+            <circle cx="40" cy="200" r="7" fill="#c2334d"/>
+            <circle cx="360" cy="60" r="9" fill="#ffd79a"/>
+            <rect x="160" y="118" width="70" height="46" rx="8" fill="#38465c"/>
+            <rect x="150" y="132" width="18" height="18" rx="4" fill="#c2334d"/>
+            <text x="24" y="40" font-family="sans-serif" font-size="17" fill="#9fb2c9">MOVE · HANDHELD</text>
+          </svg>
+        </div>
+        <div class="tb-vrow-body">
+          <h3>《五分钟学会手持运镜：让画面不再抖的四个支点》</h3>
+          <p>从站姿、呼吸到步伐节奏，讲师用三组对比镜头展示稳定原理，并给出新手最容易忽略的握持位置。</p>
+          <div class="tb-vrow-meta">
+            <span class="tb-author-mini"><span class="tb-avatar" style="background:#c2334d">剪</span>剪辑阿岚</span>
+            <span>播放 12.4 万</span><span>点赞 9820</span><span>收藏 4310</span>
+            <div class="tb-mini-actions">
+              <button class="tb-ico-btn" data-tb-like-btn>♡ 点赞</button>
+              <button class="tb-ico-btn" data-tb-save-btn>☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tb-vrow" data-tb-cat="访谈">
+        <div class="tb-vrow-thumb">
+          <svg viewBox="0 0 400 250" role="img" aria-label="访谈视频封面《县城影院老板的第七年》：放映厅红座椅与光束">
+            <rect width="400" height="250" fill="#241318"/>
+            <path d="M200 20 L330 200 L70 200 Z" fill="#ffd79a" opacity=".16"/>
+            <rect x="70" y="200" width="260" height="12" fill="#3a1f27"/>
+            <g fill="#c2334d">
+              <rect x="88" y="212" width="42" height="38" rx="6"/>
+              <rect x="146" y="212" width="42" height="38" rx="6"/>
+              <rect x="212" y="212" width="42" height="38" rx="6"/>
+              <rect x="270" y="212" width="42" height="38" rx="6"/>
+            </g>
+            <circle cx="200" cy="118" r="30" fill="#f2d6c9" opacity=".85"/>
+            <rect x="170" y="152" width="60" height="48" rx="10" fill="#f2d6c9" opacity=".6"/>
+          </svg>
+        </div>
+        <div class="tb-vrow-body">
+          <h3>《县城影院老板的第七年：我不怕没人来，怕没人拍》</h3>
+          <p>他把粮站改成 42 座放映厅，只放纪录片。访谈聊到票价、观众和一间小影院如何成为当地年轻人的据点。</p>
+          <div class="tb-vrow-meta">
+            <span class="tb-author-mini"><span class="tb-avatar" style="background:#8e1f36">麦</span>麦穗</span>
+            <span>播放 8.6 万</span><span>点赞 7340</span><span>收藏 2860</span>
+            <div class="tb-mini-actions">
+              <button class="tb-ico-btn" data-tb-like-btn>♡ 点赞</button>
+              <button class="tb-ico-btn" data-tb-save-btn>☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tb-vrow" data-tb-cat="城市">
+        <div class="tb-vrow-thumb">
+          <svg viewBox="0 0 400 250" role="img" aria-label="城市探索视频封面《早市六点半》：菜市场遮阳棚与摊位俯视图">
+            <rect width="400" height="250" fill="#e9eef2"/>
+            <g>
+              <rect x="0" y="86" width="400" height="26" fill="#c2334d"/>
+              <rect x="0" y="112" width="400" height="18" fill="#f2d6c9"/>
+              <rect x="0" y="130" width="400" height="26" fill="#3c5a72"/>
+            </g>
+            <g fill="#2e4a5e">
+              <rect x="28" y="170" width="70" height="50" rx="5"/>
+              <rect x="120" y="170" width="70" height="50" rx="5"/>
+              <rect x="212" y="170" width="70" height="50" rx="5"/>
+              <rect x="304" y="170" width="70" height="50" rx="5"/>
+            </g>
+            <g fill="#f7b267">
+              <circle cx="52" cy="190" r="8"/><circle cx="80" cy="196" r="7"/>
+              <circle cx="146" cy="190" r="8"/><circle cx="172" cy="196" r="7"/>
+              <circle cx="238" cy="190" r="8"/><circle cx="262" cy="196" r="7"/>
+              <circle cx="330" cy="190" r="8"/><circle cx="354" cy="196" r="7"/>
+            </g>
+          </svg>
+        </div>
+        <div class="tb-vrow-body">
+          <h3>《早市六点半：菜市场里的色彩学与叫卖声》</h3>
+          <p>镜头从遮阳棚的条纹开始，记录摊主摆货的固定顺序，讲解为什么红色总在最外侧，声音全部现场收音。</p>
+          <div class="tb-vrow-meta">
+            <span class="tb-author-mini"><span class="tb-avatar" style="background:#3c5a72">拾</span>拾色记</span>
+            <span>播放 15.2 万</span><span>点赞 1.2 万</span><span>收藏 5780</span>
+            <div class="tb-mini-actions">
+              <button class="tb-ico-btn" data-tb-like-btn>♡ 点赞</button>
+              <button class="tb-ico-btn" data-tb-save-btn>☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tb-vrow" data-tb-cat="生活">
+        <div class="tb-vrow-thumb">
+          <svg viewBox="0 0 400 250" role="img" aria-label="生活方式视频封面《奶奶的相册》：翻开的相册与天空照片">
+            <rect width="400" height="250" fill="#f7ede4"/>
+            <rect x="60" y="54" width="280" height="160" rx="10" fill="#fff" stroke="#e3d3c8" stroke-width="2"/>
+            <rect x="80" y="74" width="112" height="86" rx="4" fill="#a8c8dd"/>
+            <circle cx="112" cy="102" r="12" fill="#ffd79a"/>
+            <path d="M80 160 L120 128 L152 150 L192 120 L192 160 Z" fill="#6f9bb5" opacity=".7"/>
+            <rect x="208" y="74" width="112" height="86" rx="4" fill="#c9dbe6"/>
+            <circle cx="240" cy="100" r="11" fill="#fff"/>
+            <path d="M208 160 L248 130 L280 152 L320 126 L320 160 Z" fill="#8fb3c9" opacity=".75"/>
+            <rect x="80" y="176" width="100" height="10" rx="5" fill="#e6d5ca"/>
+            <rect x="208" y="176" width="80" height="10" rx="5" fill="#e6d5ca"/>
+          </svg>
+        </div>
+        <div class="tb-vrow-body">
+          <h3>《奶奶的手机相册里有三千张天空》</h3>
+          <p>创作者把长辈五年拍下的天空剪成一条六分钟短片，几乎没有对白，只有快门声和一次次的抬头。</p>
+          <div class="tb-vrow-meta">
+            <span class="tb-author-mini"><span class="tb-avatar" style="background:#b9754f">满</span>小满同学</span>
+            <span>播放 21.8 万</span><span>点赞 1.9 万</span><span>收藏 8420</span>
+            <div class="tb-mini-actions">
+              <button class="tb-ico-btn" data-tb-like-btn>♡ 点赞</button>
+              <button class="tb-ico-btn" data-tb-save-btn>☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tb-vrow" data-tb-cat="教程">
+        <div class="tb-vrow-thumb">
+          <svg viewBox="0 0 400 250" role="img" aria-label="教程视频封面《一部手机拍夜景》：夜空下的手机取景框与光点">
+            <rect width="400" height="250" fill="#131a26"/>
+            <g fill="#fff" opacity=".6">
+              <circle cx="60" cy="50" r="2"/><circle cx="140" cy="34" r="1.6"/><circle cx="248" cy="56" r="2"/>
+              <circle cx="320" cy="30" r="1.6"/><circle cx="360" cy="78" r="2"/><circle cx="92" cy="90" r="1.6"/>
+            </g>
+            <rect x="120" y="66" width="160" height="140" rx="14" fill="none" stroke="#c2334d" stroke-width="3"/>
+            <g stroke="#ffd79a" stroke-width="2" opacity=".85">
+              <line x1="150" y1="186" x2="150" y2="156"/>
+              <line x1="200" y1="186" x2="200" y2="130"/>
+              <line x1="250" y1="186" x2="250" y2="164"/>
+            </g>
+            <circle cx="200" cy="112" r="6" fill="#ffd79a"/>
+          </svg>
+        </div>
+        <div class="tb-vrow-body">
+          <h3>《一部手机拍出夜景质感：参数、补光与降噪》</h3>
+          <p>不讲玄学，直接给出可复现的拍摄步骤：锁定曝光、手动白平衡、拍摄时长控制，以及三种低成本补光方式。</p>
+          <div class="tb-vrow-meta">
+            <span class="tb-author-mini"><span class="tb-avatar" style="background:#1b2230">光</span>夜行光圈</span>
+            <span>播放 9.7 万</span><span>点赞 8120</span><span>收藏 5160</span>
+            <div class="tb-mini-actions">
+              <button class="tb-ico-btn" data-tb-like-btn>♡ 点赞</button>
+              <button class="tb-ico-btn" data-tb-save-btn>☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tb-vrow" data-tb-cat="城市">
+        <div class="tb-vrow-thumb">
+          <svg viewBox="0 0 400 250" role="img" aria-label="城市探索视频封面《末班地铁》：站台灯带与轨道纵深">
+            <rect width="400" height="250" fill="#0f1620"/>
+            <path d="M0 250 L160 90 L240 90 L400 250 Z" fill="#1b2836"/>
+            <g stroke="#c2334d" stroke-width="4">
+              <line x1="160" y1="90" x2="0" y2="250"/>
+              <line x1="240" y1="90" x2="400" y2="250"/>
+            </g>
+            <g fill="#ffd79a" opacity=".9">
+              <rect x="150" y="120" width="8" height="8"/>
+              <rect x="242" y="120" width="8" height="8"/>
+              <rect x="146" y="160" width="8" height="8"/>
+              <rect x="246" y="160" width="8" height="8"/>
+            </g>
+            <rect x="176" y="46" width="48" height="30" rx="6" fill="#fff" opacity=".14"/>
+          </svg>
+        </div>
+        <div class="tb-vrow-body">
+          <h3>《末班地铁：一天里最后十五分钟的站台》</h3>
+          <p>拍摄者连续守了九个夜晚，记录末班车前后站台上的姿态：打盹、打电话、沉默和快步奔跑。</p>
+          <div class="tb-vrow-meta">
+            <span class="tb-author-mini"><span class="tb-avatar" style="background:#0f1620">周</span>老周拍街</span>
+            <span>播放 18.3 万</span><span>点赞 1.5 万</span><span>收藏 6940</span>
+            <div class="tb-mini-actions">
+              <button class="tb-ico-btn" data-tb-like-btn>♡ 点赞</button>
+              <button class="tb-ico-btn" data-tb-save-btn>☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== S4 专题企划 ===================== -->
+<section class="tb-section" id="tb-topic" style="padding-top:0">
+  <div class="tb-sec-head">
+    <span class="tb-eyebrow">PROGRAMS · 专题企划</span>
+    <h2 class="tb-h2">三个进行中的<em>专题企划</em></h2>
+    <p class="tb-sec-desc">兔崽baby推特大赛以专题为单位组织共创，每个专题由官方策展人发起，创作者自由加入，同一主题下可以看见完全不同的表达方式。</p>
+  </div>
+  <div class="tb-topic-grid">
+    <article class="tb-topic">
+      <div class="tb-topic-head">
+        <h3>城市一分钟</h3>
+        <span class="tb-state on">征集中</span>
+      </div>
+      <p>用六十秒讲清楚一座城市的一个瞬间。不限设备，不限风格，但必须现场收音。</p>
+      <ul class="tb-topic-list">
+        <li>《便利店关东煮的热气》· 参赛作品 · 01:00</li>
+        <li>《环卫车驶过空街》· 参赛作品 · 00:58</li>
+        <li>《天桥上的外卖骑手》· 参赛作品 · 01:00</li>
+      </ul>
+      <div class="tb-topic-foot"><span>已收 4,286 条</span><span>截止 12-18</span></div>
+      <button class="tb-btn tb-btn-ghost" data-tb-modal="submit">加入专题</button>
+    </article>
+
+    <article class="tb-topic">
+      <div class="tb-topic-head">
+        <h3>我的第一台摄像机</h3>
+        <span class="tb-state warm">评审中</span>
+      </div>
+      <p>讲述人与设备的关系：第一次按下录制的紧张，第一段素材的粗糙，以及后来坚持下来的理由。</p>
+      <ul class="tb-topic-list">
+        <li>《二手机与三百小时废片》· 麦穗 · 09:12</li>
+        <li>《我用DV机拍完了整部短片》· 铁皮鼓手 · 13:40</li>
+        <li>《爸妈的婚礼录像带被我修复了》· 小满同学 · 07:21</li>
+      </ul>
+      <div class="tb-topic-foot"><span>已收 1,904 条</span><span>结果 12-02 公布</span></div>
+      <button class="tb-btn tb-btn-ghost" data-tb-share="专题：我的第一台摄像机">分享专题</button>
+    </article>
+
+    <article class="tb-topic">
+      <div class="tb-topic-head">
+        <h3>创作者的三十天</h3>
+        <span class="tb-state on">长期开放</span>
+      </div>
+      <p>连续三十天记录同一件事：窗外的树、早餐、通勤路线或一句口头禅。这是关于坚持与陪伴的专题。</p>
+      <ul class="tb-topic-list">
+        <li>《三十天的同一棵树》· 拾色记 · 合辑</li>
+        <li>《地铁十三号线的三十个早上》· 老周拍街 · 合辑</li>
+        <li>《每天拍一次家里的猫》· 剪了一半 · 合辑</li>
+      </ul>
+      <div class="tb-topic-foot"><span>已收 3,751 条</span><span>长期有效</span></div>
+      <button class="tb-btn tb-btn-ghost" data-tb-modal="submit">上传作品</button>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== S5 关键词解析 / 深度解析（800字以上） ===================== -->
+<section class="tb-deep" id="tb-deep">
+  <div class="tb-deep-inner">
+    <div class="tb-sec-head">
+      <span class="tb-eyebrow">INSIGHT · 深度解析</span>
+      <h2 class="tb-h2">读懂「兔崽baby推特大赛」：一个<em>视频社区</em>是怎么长出来的</h2>
+      <p class="tb-sec-desc">我们想认真解释这个品牌名的含义、它的组织方式，以及为什么一个比赛能持续运营九届而不失去活力。</p>
+    </div>
+
+    <div class="tb-deep-layout">
+      <div class="tb-article">
+        <h3>名字的来历：从一个人的昵称，到一群人的舞台</h3>
+        <p><b>兔崽baby推特大赛</b>最初只是几个创作者之间的玩笑式称呼。当年他们在社交平台上用同一个标签互相点名，交换自己拍的短片，谁也没有想到这个松散的游戏会在几年后变成一个拥有完整投稿、评审与展映体系的视频品牌。兔崽baby推特大赛官方网站保留了这个略显孩子气的名字，是因为它准确记录了起点：一群不专业但认真的人，用手机拍下了第一段真正属于自己的影像。</p>
+        <p>也正因为如此，我们从不把这个名字当作单纯的赛事代号。它更接近一种约定：不论你手里是专业摄影机还是三年前的旧手机，只要你愿意把镜头对准自己的生活，就值得被看见。品牌走到今天，靠的不是预算，而是这条最初的口碑与信任。</p>
+
+        <h3>赛制与社区：为什么它更像内容生态而不是一次性活动</h3>
+        <p>兔崽baby推特大赛采取赛季制。每个赛季由策展人提出三到五个专题，创作者按兴趣加入，作品在官方网站统一展示、统一统计播放与收藏。评审分为编辑推荐与社区投票两部分，前者关注叙事完整度与影像完成度，后者则更看重共鸣与真实。这样的双轨设计让专业创作者与普通投稿者都有机会被推到首页，也让“行业领先”这四个字有了可被检验的标准——不是数据好看，而是内容经得起反复观看。</p>
+        <p>更关键的是持续运营。赛季结束后，作品不会消失：它们被编进专题合辑，成为下一届新人的参考样本。创作者的个人主页会保留全部投稿记录，粉丝可以顺着时间线看到一个人的成长。我们在后台见过许多这样的轨迹：第一次投稿时画面颤抖，第三届时已经能完成完整的三幕结构。这种陪伴感，是社区最珍贵的资产。</p>
+
+        <h3>内容标准：原创、正版、高清，以及不妥协的真实</h3>
+        <p>作为官方网站，我们对内容的底线要求写得很清楚。第一是原创，搬运与二次剪辑必须获得授权并标注；第二是正版，所有配乐需使用平台曲库或提供授权说明；第三是高清，至少 1080p，不接受严重压缩导致的画面劣化。这三条不是形式主义，而是让创作者学会以专业标准要求自己。我们相信，品质不是评审打分打出来的，而是从拍摄第一天就建立的职业习惯。</p>
+        <p>在此基础上，我们更看重真实。兔崽baby推特大赛的获奖作品里，很少有宏大叙事，更多是具体的、带体温的细节：摊主收摊时数硬币的手，末班地铁里靠着扶手的困倦，奶奶相册里重复了三千次的天空。这些内容不需要华丽包装，它们的力量来自创作者愿意认真看一眼身边的人。这也是我们反复强调的社会责任——让更多普通人的生活被平等地记录。</p>
+
+        <h3>未来：把比赛做成一项长期的基础设施</h3>
+        <p>接下来的一年，兔崽baby推特大赛会做三件事。第一，开放创作者扶持计划，为入选者提供拍摄补贴、设备借用与剪辑指导；第二，建立城市影像档案，与在地机构合作，把优秀的城市记录作品长期保存并可公开查阅；第三，完善社区规范，让评论、投票与举报都有清晰的规则与响应时间。我们并不打算把平台做大到无所不包，而是希望在垂直领域里做到值得信赖：一个创作者愿意认真投稿、观众愿意安静看完的地方。</p>
+        <p>如果你刚拿起相机，欢迎从一分钟开始；如果你已经拍了很久，欢迎把旧作品重新交给我们。兔崽baby推特大赛官方网站会一直在这里，持续运营，持续更新，持续为真实的表达留位置。</p>
+      </div>
+
+      <aside class="tb-deep-aside">
+        <h3>品牌大事记</h3>
+        <ul class="tb-timeline">
+          <li><b>2019 · 起点</b><span>几位创作者在社交平台以同一标签交换短片，形成最初的口碑圈层。</span></li>
+          <li><b>2021 · 第一届赛季</b><span>首届兔崽baby推特大赛上线，收到投稿 1,280 条，设立编辑推荐机制。</span></li>
+          <li><b>2023 · 专题制</b><span>引入策展人与专题单元，城市记录成为最受欢迎的投稿方向。</span></li>
+          <li><b>2025 · 创作者扶持</b><span>启动扶持计划，为新人提供拍摄补贴与剪辑指导，累计入选 180 位。</span></li>
+          <li><b>2026 · 第九届</b><span>秋季赛开放报名，新增原创影像档案与社区投票双轨评审。</span></li>
+        </ul>
+        <div class="tb-aside-note">本板块为官方网站品牌故事整理，内容持续更新，欢迎创作者在投稿时补充自己的参赛经历。</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== S5 创作者矩阵（双列简介） ===================== -->
+<section class="tb-section" id="tb-authors">
+  <div class="tb-sec-head">
+    <span class="tb-eyebrow">CREATORS · 创作者矩阵</span>
+    <h2 class="tb-h2">在<em>创作者</em>中间：六位持续投稿的人</h2>
+    <p class="tb-sec-desc">他们的领域各不相同，但都在兔崽baby推特大赛留下了完整的时间线。点击「查看主页」可了解其作品与擅长方向。</p>
+  </div>
+
+  <div class="tb-author-grid">
+    <article class="tb-author">
+      <div class="tb-avatar-lg" style="background:#c2334d">周</div>
+      <div class="tb-author-body">
+        <h3>老周拍街 <span class="tb-verify">官方认证</span></h3>
+        <div class="tb-author-field">城市探索 / 纪实影像</div>
+        <p>在报社做过十年摄影记者，如今专注街头短片。习惯在没有脚本的情况下等待，最长一次在同一路口蹲了九个夜晚。认为纪录片的诚实，来自不打断被拍摄者的生活。</p>
+        <div class="tb-author-nums"><span>作品 <b>86</b></span><span>粉丝 <b>12.4万</b></span><span>获赞 <b>38.2万</b></span></div>
+        <button class="tb-author-more" data-tb-author="老周拍街">查看主页 →</button>
+      </div>
+    </article>
+
+    <article class="tb-author">
+      <div class="tb-avatar-lg" style="background:#3c5a72">拾</div>
+      <div class="tb-author-body">
+        <h3>拾色记 <span class="tb-verify">专题策展人</span></h3>
+        <div class="tb-author-field">艺术美学 / 色彩记录</div>
+        <p>视觉设计出身，擅长把抽象理论落回日常生活。拍过菜市场、旧书摊和公交站牌，认为配色的答案往往藏在最不起眼的地方。她的作品常被用作新手学习构图的参考。</p>
+        <div class="tb-author-nums"><span>作品 <b>64</b></span><span>粉丝 <b>9.8万</b></span><span>获赞 <b>26.7万</b></span></div>
+        <button class="tb-author-more" data-tb-author="拾色记">查看主页 →</button>
+      </div>
+    </article>
+
+    <article class="tb-author">
+      <div class="tb-avatar-lg" style="background:#1b2230">岚</div>
+      <div class="tb-author-body">
+        <h3>剪辑阿岚</h3>
+        <div class="tb-author-field">教程干货 / 后期剪辑</div>
+        <p>从业八年的剪辑师，讲课风格以“可复现”著称，每个教程都附带工程文件与参数表。她坚持把复杂技巧拆成五分钟能学会的小步骤，帮助新手跨过第一次动手的门槛。</p>
+        <div class="tb-author-nums"><span>作品 <b>112</b></span><span>粉丝 <b>16.3万</b></span><span>获赞 <b>51.4万</b></span></div>
+        <button class="tb-author-more" data-tb-author="剪辑阿岚">查看主页 →</button>
+      </div>
+    </article>
+
+    <article class="tb-author">
+      <div class="tb-avatar-lg" style="background:#b9754f">满</div>
+      <div class="tb-author-body">
+        <h3>小满同学</h3>
+        <div class="tb-author-field">情感故事 / 家庭记录</div>
+        <p>习惯拍家人，尤其是奶奶。作品节奏很慢，很少使用配乐，靠环境声与停顿推进。她认为陪伴不是宏大的主题，而是把镜头长时间对准同一个人，并且耐心地等她说下去。</p>
+        <div class="tb-author-nums"><span>作品 <b>47</b></span><span>粉丝 <b>7.6万</b></span><span>获赞 <b>22.9万</b></span></div>
+        <button class="tb-author-more" data-tb-author="小满同学">查看主页 →</button>
+      </div>
+    </article>
+
+    <article class="tb-author">
+      <div class="tb-avatar-lg" style="background:#8e1f36">麦</div>
+      <div class="tb-author-body">
+        <h3>麦穗</h3>
+        <div class="tb-author-field">人物访谈 / 在地文化</div>
+        <p>长期关注县域与小镇的公共空间，做过粮站影院、旧书店和社区食堂系列访谈。他相信好的访谈不是提问技巧，而是让受访者愿意沉默几秒钟，把真正想说的话说出来。</p>
+        <div class="tb-author-nums"><span>作品 <b>58</b></span><span>粉丝 <b>8.2万</b></span><span>获赞 <b>24.1万</b></span></div>
+        <button class="tb-author-more" data-tb-author="麦穗">查看主页 →</button>
+      </div>
+    </article>
+
+    <article class="tb-author">
+      <div class="tb-avatar-lg" style="background:#5c4b8a">铁</div>
+      <div class="tb-author-body">
+        <h3>铁皮鼓手 <span class="tb-verify">新人榜 TOP3</span></h3>
+        <div class="tb-author-field">创作幕后 / 音乐现场</div>
+        <p>在出租屋用锅碗瓢盆录了一张专辑，从采样到混音全程自己完成。他的幕后记录把声音制作讲得通俗易懂，也坦白了很多失败的尝试，被称为“最不藏私的新人”。</p>
+        <div class="tb-author-nums"><span>作品 <b>33</b></span><span>粉丝 <b>5.1万</b></span><span>获赞 <b>14.8万</b></span></div>
+        <button class="tb-author-more" data-tb-author="铁皮鼓手">查看主页 →</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== S6 评论区（评分摘要 + 双列短评） ===================== -->
+<section class="tb-section" id="tb-comments" style="padding-top:0">
+  <div class="tb-sec-head">
+    <span class="tb-eyebrow">VOICES · 用户口碑</span>
+    <h2 class="tb-h2">来自<em>社区</em>的八条真实评价</h2>
+    <p class="tb-sec-desc">这些评价来自参赛者、观众与合作方，观点与长度都不一样。我们保留原话，不做修饰。</p>
+  </div>
+
+  <div class="tb-comment-wrap">
+    <div class="tb-score-card">
+      <h3>综合口碑</h3>
+      <div class="tb-score-big">4.8<small> / 5</small></div>
+      <div style="font-size:12.5px;color:#c9b3ae;margin-top:2px">基于 12,684 条社区评价</div>
+      <div class="tb-score-bar"><i style="width:96%"></i></div>
+      <div class="tb-score-dims">
+        <div><span>内容质量</span><b>4.9</b></div>
+        <div><span>评审透明度</span><b>4.7</b></div>
+        <div><span>社区氛围</span><b>4.8</b></div>
+        <div><span>投稿体验</span><b>4.6</b></div>
+        <div><span>扶持力度</span><b>4.7</b></div>
+      </div>
+    </div>
+
+    <div class="tb-comment-grid">
+      <article class="tb-comment">
+        <div class="tb-comment-top">
+          <span class="tb-avatar" style="background:#c2334d">南</span>
+          <b>南桥不南</b><span class="tb-comment-stars">★★★★★</span>
+        </div>
+        <p>第一次投稿是拿手机拍的，画质一般，但收到编辑的逐条修改建议，写了将近一千字。那种被认真对待的感觉，比拿名次更重要。</p>
+        <div class="tb-comment-meta"><span>参赛者</span><span>2026-10-18</span></div>
+      </article>
+
+      <article class="tb-comment">
+        <div class="tb-comment-top">
+          <span class="tb-avatar" style="background:#3c5a72">看</span>
+          <b>看片到深夜</b><span class="tb-comment-stars">★★★★★</span>
+        </div>
+        <p>作为观众，这里的片单比很多视频平台更耐看。没有夸张标题，点进去就是完整的叙事，剪辑节奏很舒服，适合晚上安静看两条。</p>
+        <div class="tb-comment-meta"><span>观众</span><span>2026-10-25</span></div>
+      </article>
+
+      <article class="tb-comment">
+        <div class="tb-comment-top">
+          <span class="tb-avatar" style="background:#8e1f36">麦</span>
+          <b>麦穗</b><span class="tb-comment-stars">★★★★☆</span>
+        </div>
+        <p>专题制的设计很聪明，它让同题创作变成一次公开对话。同一件小事在六个人镜头下完全不同，这种对照比单一榜单有价值得多。</p>
+        <div class="tb-comment-meta"><span>创作者</span><span>2026-11-02</span></div>
+      </article>
+
+      <article class="tb-comment">
+        <div class="tb-comment-top">
+          <span class="tb-avatar" style="background:#1b2230">岚</span>
+          <b>剪辑阿岚</b><span class="tb-comment-stars">★★★★★</span>
+        </div>
+        <p>投稿审核对正版配乐要求很严，一开始觉得麻烦，后来发现这逼着我重新学了曲库和授权。现在接商业项目，这套习惯直接能派上用场。</p>
+        <div class="tb-comment-meta"><span>创作者</span><span>2026-11-06</span></div>
+      </article>
+
+      <article class="tb-comment">
+        <div class="tb-comment-top">
+          <span class="tb-avatar" style="background:#5c4b8a">新</span>
+          <b>新人小陶</b><span class="tb-comment-stars">★★★★☆</span>
+        </div>
+        <p>页面信息挺全，但如果能按拍摄设备筛选作品就更好了。我是新手，很想找同样用手机拍摄的作品来比较，希望后续版本能加上。</p>
+        <div class="tb-comment-meta"><span>参赛者</span><span>2026-11-09</span></div>
+      </article>
+
+      <article class="tb-comment">
+        <div class="tb-comment-top">
+          <span class="tb-avatar" style="background:#b9754f">邻</span>
+          <b>邻座李工</b><span class="tb-comment-stars">★★★★★</span>
+        </div>
+        <p>我们社区食堂和这个平台做过一次合作拍摄，团队提前三天来踩点，拍完把所有素材交给老人自己留档，非常专业。</p>
+        <div class="tb-comment-meta"><span>合作方</span><span>2026-11-12</span></div>
+      </article>
+
+      <article class="tb-comment">
+        <div class="tb-comment-top">
+          <span class="tb-avatar" style="background:#2f7a5a">慢</span>
+          <b>慢速快门</b><span class="tb-comment-stars">★★★★☆</span>
+        </div>
+        <p>投票环节公开了每个专题的参与数据，这点很透明。唯一想提的是决赛直播如果能提供回放章节标记会更方便，错过就得从头拖。</p>
+        <div class="tb-comment-meta"><span>观众</span><span>2026-11-15</span></div>
+      </article>
+
+      <article class="tb-comment">
+        <div class="tb-comment-top">
+          <span class="tb-avatar" style="background:#8a5a2f">晴</span>
+          <b>晴天修片</b><span class="tb-comment-stars">★★★★★</span>
+        </div>
+        <p>在这里追了一整季，最喜欢看的是创作者主页的时间线。能把一个人从手抖到稳住的两年摆在一起，比任何教程都更有说服力。</p>
+        <div class="tb-comment-meta"><span>观众</span><span>2026-11-19</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== S7 辅助区：企业动态 + 合作品牌 ===================== -->
+<section class="tb-section" id="tb-aux" style="padding-top:0">
+  <div class="tb-sec-head">
+    <span class="tb-eyebrow">NEWS · 企业动态</span>
+    <h2 class="tb-h2"><em>企业动态</em>与长期合作伙伴</h2>
+    <p class="tb-sec-desc">来自官方的公开信息：赛程、扶持计划与内容更新，均可在此追溯。</p>
+  </div>
+  <div class="tb-aux-grid">
+    <div class="tb-news">
+      <h3>近期官方发布</h3>
+      <ul class="tb-news-list">
+        <li>
+          <span class="tb-news-date">11-20</span>
+          <div>
+            <b>2026 秋季赛报名通道正式开启</b>
+            <span>本届设「城市一分钟」与「我的第一台摄像机」两个命题单元，投稿截止 12 月 18 日，评审结果于 12 月 28 日公布。</span>
+          </div>
+        </li>
+        <li>
+          <span class="tb-news-date">11-12</span>
+          <div>
+            <b>创作者扶持计划第 7 期名单公布</b>
+            <span>共 30 位创作者入选，获得拍摄补贴、设备借用与一对一剪辑指导，扶持周期为六个月。</span>
+          </div>
+        </li>
+        <li>
+          <span class="tb-news-date">10-30</span>
+          <div>
+            <b>城市影像档案首批作品入库</b>
+            <span>与三家在地文化机构合作，收录 216 条城市记录作品，向公众开放查阅并长期保存。</span>
+          </div>
+        </li>
+        <li>
+          <span class="tb-news-date">10-08</span>
+          <div>
+            <b>社区规范 2.0 上线</b>
+            <span>明确评论、投票与举报的处理时效，新增原创争议申诉通道，所有处理结果在站内公示。</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 style="font-size:17px;margin-bottom:14px">合作品牌与伙伴</h3>
+      <div class="tb-partners">
+        <div class="tb-partner"><i style="background:#c2334d">影</i>光影器材社</div>
+        <div class="tb-partner"><i style="background:#3c5a72">城</i>城记文化中心</div>
+        <div class="tb-partner"><i style="background:#b9754f">书</i>拾页独立书店</div>
+        <div class="tb-partner"><i style="background:#2f7a5a">声</i>声场录音棚</div>
+        <div class="tb-partner"><i style="background:#5c4b8a">映</i>县放映计划</div>
+        <div class="tb-partner"><i style="background:#8a5a2f">灯</i>灯塔青年空间</div>
+      </div>
+      <div class="tb-aside-note" style="background:#fff;border:1px solid var(--tb-line);color:var(--tb-gray)">
+        合作以内容共创与设备支持为主，不介入评审结果。我们希望伙伴关系是透明的，也希望每一份资源都真正落到创作者手里。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== S7 FAQ ===================== -->
+<section class="tb-section" id="tb-faq" style="padding-top:0">
+  <div class="tb-sec-head" style="max-width:900px;margin-left:auto;margin-right:auto;text-align:center">
+    <span class="tb-eyebrow" style="justify-content:center">FAQ · 常见问题</span>
+    <h2 class="tb-h2">关于<em>参赛</em>，你可能想问的六个问题</h2>
+  </div>
+  <div class="tb-faq">
+    <details open>
+      <summary>参赛需要什么设备和资格？</summary>
+      <p>不限制设备，手机、相机、运动相机均可。作品需为 1080p 及以上分辨率，时长 15 秒至 30 分钟。年满 16 周岁即可报名，未成年人需监护人同意；团队投稿以主创名义报名，并在提交时列明其他成员。</p>
+    </details>
+    <details>
+      <summary>作品必须是全新拍摄的吗？</summary>
+      <p>不必须。你可以提交两年内创作且未在本平台发布过的作品。若是系列或合辑，请选择一条作为主投作品，并在简介中说明完整系列的结构。旧作重投需要你确认拥有完整版权。</p>
+    </details>
+    <details>
+      <summary>配乐和素材的版权如何要求？</summary>
+      <p>优先使用平台曲库与已授权素材。使用外部音乐需上传授权说明或购买凭证，二次剪辑他人影像必须获得书面授权。审核阶段发现侵权将退回修改，屡次违反会限制投稿权限。</p>
+    </details>
+    <details>
+      <summary>评审是怎么进行的，会不会只看数据？</summary>
+      <p>评审分编辑推荐与社区投票两部分。编辑推荐关注叙事完整度、影像完成度与原创性；社区投票权重约占三成。播放量不作为唯一依据，我们更愿意把首页位置留给经得起反复观看的作品。</p>
+    </details>
+    <details>
+      <summary>投稿后还能修改作品信息吗？</summary>
+      <p>可以。在赛季截止前，你可以在个人主页编辑标题、简介与标签，重新上传视频文件会触发一次新的审核。评审开始后仅允许修改错别字，视频文件不可替换。</p>
+    </details>
+    <details>
+      <summary>获奖或入选后有什么权益？</summary>
+      <p>入选作品会进入官方合辑与城市影像档案，并获得扶持计划优先推荐资格。部分作品将获得拍摄补贴与设备借用支持。所有权益均不涉及独家买断，版权始终归创作者所有。</p>
+    </details>
+  </div>
+</section>
+
+<!-- ===================== S7 投稿入口 ===================== -->
+<div class="tb-cta" id="tb-join">
+  <div class="tb-cta-box">
+    <div>
+      <h2>把你的一段影像，交给一个认真看的社区</h2>
+      <p>无论是一次通勤、一顿早餐，还是一个人讲了很久的故事。兔崽baby推特大赛官方网站长期开放投稿，原创、正版、高清是我们的底线，真实与耐心是我们的偏好。</p>
+    </div>
+    <div class="tb-cta-actions">
+      <button class="tb-btn tb-btn-primary" data-tb-modal="submit">立即投稿</button>
+      <button class="tb-btn tb-btn-ghost" data-tb-share="兔崽baby推特大赛投稿入口">复制分享链接</button>
+      <button class="tb-btn tb-btn-ghost" data-tb-modal="feedback">反馈建议</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== S8 页脚 ===================== -->
+<footer class="tb-footer">
+  <div class="tb-footer-inner">
+    <div class="tb-footer-top">
+      <div class="tb-footer-brand">
+        <b>兔崽baby推特大赛</b>
+        <span>OFFICIAL VIDEO PORTAL</span>
+        <p>兔崽baby推特大赛官方网站，专注原创短片创作与社区共创的视频品牌。我们持续运营高品质内容生态，为创作者与企业搭建值得信赖的展示窗口。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#tb-focus">焦点推荐</a></li>
+          <li><a href="#tb-videos">视频内容库</a></li>
+          <li><a href="#tb-topic">专题企划</a></li>
+          <li><a href="#tb-deep">品牌故事</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>社区</h4>
+        <ul>
+          <li><a href="#tb-authors">创作者矩阵</a></li>
+          <li><a href="#tb-comments">用户口碑</a></li>
+          <li><a href="#tb-aux">企业动态</a></li>
+          <li><a href="#tb-faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与</h4>
+        <ul>
+          <li><a href="#tb-join">投稿入口</a></li>
+          <li><button class="tb-footer-link" data-tb-modal="submit" style="background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:0">报名参赛</button></li>
+          <li><button class="tb-footer-link" data-tb-modal="feedback" style="background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:0">反馈与举报</button></li>
+          <li><button class="tb-footer-link" data-tb-share="兔崽baby推特大赛官方网站" style="background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:0">分享官网</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tb-footer-bottom">
+      <span>© 2019–2026 兔崽baby推特大赛 官方网站 · 版权所有 · 持续运营中</span>
+      <span>内容均为创作者原创投稿 · 高清正版 · 备案号：影像社区备 2019-0917 号</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== Toast / 弹窗 / 回顶 ===================== -->
+<div class="tb-toast" id="tb-toast" role="status" aria-live="polite"></div>
+
+<div class="tb-modal-mask" id="tb-modal-submit">
+  <div class="tb-modal" role="dialog" aria-modal="true" aria-labelledby="tb-submit-title">
+    <h3 id="tb-submit-title">投稿报名</h3>
+    <p class="tb-modal-sub">填写基本信息，策划组会在三个工作日内与你联系并发送上传指引。</p>
+    <label for="tb-f-name">创作者昵称</label>
+    <input id="tb-f-name" type="text" placeholder="例如：老周拍街">
+    <label for="tb-f-topic">投稿专题</label>
+    <select id="tb-f-topic">
+      <option>城市一分钟</option>
+      <option>我的第一台摄像机</option>
+      <option>创作者的三十天</option>
+      <option>自由投稿</option>
+    </select>
+    <label for="tb-f-desc">作品简介</label>
+    <textarea id="tb-f-desc" rows="3" placeholder="用两三句话说说这条片子拍了什么"></textarea>
+    <div class="tb-modal-foot">
+      <button class="tb-btn tb-btn-ghost" data-tb-close>取消</button>
+      <button class="tb-btn tb-btn-primary" data-tb-submit-ok>提交</button>
+    </div>
+  </div>
+</div>
+
+<div class="tb-modal-mask" id="tb-modal-feedback">
+  <div class="tb-modal" role="dialog" aria-modal="true" aria-labelledby="tb-feedback-title">
+    <h3 id="tb-feedback-title">反馈与举报</h3>
+    <p class="tb-modal-sub">我们会认真阅读每一条反馈，侵权与违规举报将在 48 小时内处理。</p>
+    <label for="tb-fb-type">类型</label>
+    <select id="tb-fb-type">
+      <option>内容建议</option>
+      <option>版权举报</option>
+      <option>页面问题</option>
+      <option>合作咨询</option>
+    </select>
+    <label for="tb-fb-text">具体说明</label>
+    <textarea id="tb-fb-text" rows="4" placeholder="请描述具体问题，便于我们定位"></textarea>
+    <div class="tb-modal-foot">
+      <button class="tb-btn tb-btn-ghost" data-tb-close>取消</button>
+      <button class="tb-btn tb-btn-primary" data-tb-feedback-ok>发送</button>
+    </div>
+  </div>
+</div>
+
+<div class="tb-modal-mask" id="tb-modal-share">
+  <div class="tb-modal" role="dialog" aria-modal="true" aria-labelledby="tb-share-title">
+    <h3 id="tb-share-title">分享</h3>
+    <p class="tb-modal-sub" id="tb-share-sub">把这条内容分享给朋友</p>
+    <div class="tb-share-row">
+      <button data-tb-share-toast="微信">微信</button>
+      <button data-tb-share-toast="微博">微博</button>
+      <button data-tb-share-toast="QQ">QQ</button>
+    </div>
+    <div class="tb-modal-foot">
+      <button class="tb-btn tb-btn-ghost" data-tb-close>关闭</button>
+      <button class="tb-btn tb-btn-primary" id="tb-copy-link">复制链接</button>
+    </div>
+  </div>
+</div>
+
+<div class="tb-modal-mask" id="tb-modal-author">
+  <div class="tb-modal" role="dialog" aria-modal="true" aria-labelledby="tb-author-title">
+    <h3 id="tb-author-title">创作者主页</h3>
+    <p class="tb-modal-sub" id="tb-author-info">正在加载创作者信息。</p>
+    <div class="tb-modal-foot">
+      <button class="tb-btn tb-btn-primary" data-tb-close>知道了</button>
+    </div>
+  </div>
+</div>
+
+<button class="tb-totop" id="tb-totop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Toast ---------- */
+  var toastEl = document.getElementById('tb-toast');
+  var toastTimer = null;
+  function toast(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2200);
+  }
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('tb-burger');
+  var mobileNav = document.getElementById('tb-mobile-nav');
+  if(burger && mobileNav){
+    burger.addEventListener('click', function(){
+      var open = mobileNav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.textContent = open ? '✕' : '☰';
+    });
+    mobileNav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        mobileNav.classList.remove('open');
+        burger.setAttribute('aria-expanded','false');
+        burger.textContent = '☰';
+      }
+    });
+  }
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchForm = document.getElementById('tb-search-form');
+  var searchInput = document.getElementById('tb-search-input');
+  if(searchForm && searchInput){
+    searchForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var q = searchInput.value.trim();
+      if(!q){ toast('请输入关键词后再搜索'); searchInput.focus(); return; }
+      var rows = document.querySelectorAll('#tb-vlist .tb-vrow');
+      var hit = 0;
+      rows.forEach(function(row){
+        var txt = row.textContent.toLowerCase();
+        var match = txt.indexOf(q.toLowerCase()) > -1;
+        row.classList.toggle('tb-vrow-video-hidden', !match);
+        if(match) hit++;
+      });
+      var hint = document.getElementById('tb-filter-hint');
+      if(hit > 0){
+        toast('找到 ' + hit + ' 条与「' + q + '」相关的作品');
+        if(hint) hint.textContent = '筛选结果 ' + hit + ' 条';
+      }else{
+        toast('未找到「' + q + '」，已为你显示全部作品');
+        rows.forEach(function(r){ r.classList.remove('tb-vrow-video-hidden'); });
+        if(hint) hint.textContent = '共 6 条作品';
+      }
+    });
+  }
+
+  /* ---------- 标签筛选 ---------- */
+  var filters = document.querySelectorAll('.tb-filter');
+  var vrows = document.querySelectorAll('#tb-vlist .tb-vrow');
+  var filterHint = document.getElementById('tb-filter-hint');
+  filters.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filters.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var key = btn.getAttribute('data-tb-filter');
+      var count = 0;
+      vrows.forEach(function(row){
+        var show = key === 'all' || row.getAttribute('data-tb-cat') === key;
+        row.classList.toggle('tb-vrow-video-hidden', !show);
+        if(show) count++;
+      });
+      if(filterHint) filterHint.textContent = '共 ' + count + ' 条作品';
+      if(searchInput) searchInput.value = '';
+    });
+  });
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  function parseNum(s){ return parseInt(String(s).replace(/[^\d]/g,''),10) || 0; }
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('[data-tb-like-btn]');
+    if(likeBtn){
+      var liked = likeBtn.classList.toggle('liked');
+      var row = likeBtn.closest('.tb-vrow') || likeBtn.closest('.tb-focus-body');
+      var likeTarget = row ? row.querySelector('[data-tb-like]') : null;
+      if(likeTarget){
+        var n = parseNum(likeTarget.textContent);
+        n = liked ? n + 1 : Math.max(0, n - 1);
+        likeTarget.textContent = n.toLocaleString('zh-CN');
+      }
+      likeBtn.textContent = liked ? '♥ 已赞' : '♡ 点赞';
+      toast(liked ? '已点赞，感谢支持原创' : '已取消点赞');
+      return;
+    }
+    var saveBtn = e.target.closest('[data-tb-save-btn]');
+    if(saveBtn){
+      var saved = saveBtn.classList.toggle('saved');
+      saveBtn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+      toast(saved ? '已收藏到我的片单' : '已取消收藏');
+    }
+  });
+
+  /* ---------- 弹窗通用 ---------- */
+  var masks = document.querySelectorAll('.tb-modal-mask');
+  function closeAll(){
+    masks.forEach(function(m){ m.classList.remove('open'); });
+  }
+  function openModal(id){
+    closeAll();
+    var m = document.getElementById('tb-modal-' + id);
+    if(m){ m.classList.add('open'); }
+  }
+  document.addEventListener('click', function(e){
+    var opener = e.target.closest('[data-tb-modal]');
+    if(opener){
+      e.preventDefault();
+      openModal(opener.getAttribute('data-tb-modal'));
+      return;
+    }
+    if(e.target.closest('[data-tb-close]') || e.target.classList.contains('tb-modal-mask')){
+      closeAll();
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeAll();
+  });
+
+  /* ---------- 投稿提交 ---------- */
+  var submitOk = document.querySelector('[data-tb-submit-ok]');
+  if(submitOk){
+    submitOk.addEventListener('click', function(){
+      var name = document.getElementById('tb-f-name');
+      var desc = document.getElementById('tb-f-desc');
+      if(name && !name.value.trim()){
+        toast('请填写创作者昵称');
+        name.focus();
+        return;
+      }
+      closeAll();
+      toast('投稿信息已提交，策划组将在三个工作日内联系你');
+      if(name) name.value = '';
+      if(desc) desc.value = '';
+    });
+  }
+
+  /* ---------- 反馈提交 ---------- */
+  var fbOk = document.querySelector('[data-tb-feedback-ok]');
+  if(fbOk){
+    fbOk.addEventListener('click', function(){
+      var text = document.getElementById('tb-fb-text');
+      if(text && !text.value.trim()){
+        toast('请填写具体说明');
+        text.focus();
+        return;
+      }
+      closeAll();
+      toast('反馈已收到，我们会在 48 小时内处理');
+      if(text) text.value = '';
+    });
+  }
+
+  /* ---------- 分享 ---------- */
+  var shareTarget = '';
+  document.addEventListener('click', function(e){
+    var sh = e.target.closest('[data-tb-share]');
+    if(sh){
+      e.preventDefault();
+      shareTarget = sh.getAttribute('data-tb-share') || document.title;
+      var sub = document.getElementById('tb-share-sub');
+      if(sub) sub.textContent = '分享「' + shareTarget + '」给朋友';
+      openModal('share');
+      return;
+    }
+    var shTo = e.target.closest('[data-tb-share-toast]');
+    if(shTo){
+      var platform = shTo.getAttribute('data-tb-share-toast');
+      toast('已生成分享卡片，可在' + platform + '中粘贴');
+    }
+  });
+
+  var copyBtn = document.getElementById('tb-copy-link');
+  if(copyBtn){
+    copyBtn.addEventListener('click', function(){
+      var text = '兔崽baby推特大赛官方网站 · ' + (shareTarget || '原创影像社区');
+      function done(){ toast('链接已复制到剪贴板'); closeAll(); }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done).catch(function(){ fallback(); });
+      }else{
+        fallback();
+      }
+      function fallback(){
+        try{
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          done();
+        }catch(err){
+          toast('复制失败，请手动选择内容');
+        }
+      }
+    });
+  }
+
+  /* ---------- 作者弹窗 ---------- */
+  var authorData = {
+    '老周拍街':'城市探索 / 纪实影像 · 作品 86 条 · 粉丝 12.4 万。习惯在没有脚本的情况下等待，认为纪录片的诚实来自不打断被拍摄者的生活。',
+    '拾色记':'艺术美学 / 色彩记录 · 作品 64 条 · 粉丝 9.8 万。视觉设计出身，擅长把抽象理论落回日常生活，作品常被作为构图参考。',
+    '剪辑阿岚':'教程干货 / 后期剪辑 · 作品 112 条 · 粉丝 16.3 万。从业八年的剪辑师，每个教程都附带工程文件与参数表，坚持可复现。',
+    '小满同学':'情感故事 / 家庭记录 · 作品 47 条 · 粉丝 7.6 万。习惯拍家人，作品节奏很慢，靠环境声与停顿推进，认为陪伴需要耐心。',
+    '麦穗':'人物访谈 / 在地文化 · 作品 58 条 · 粉丝 8.2 万。长期关注县域与小镇的公共空间，相信好的访谈是让受访者愿意说出真话。',
+    '铁皮鼓手':'创作幕后 / 音乐现场 · 作品 33 条 · 粉丝 5.1 万。在出租屋用锅碗瓢盆录了一张专辑，把制作流程讲得通俗易懂，被称最不藏私的新人。'
+  };
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('[data-tb-author]');
+    if(btn){
+      e.preventDefault();
+      var name = btn.getAttribute('data-tb-author');
+      var t = document.getElementById('tb-author-title');
+      var info = document.getElementById('tb-author-info');
+      if(t) t.textContent = name;
+      if(info) info.textContent = authorData[name] || '暂无更多信息。';
+      openModal('author');
+    }
+  });
+
+  /* ---------- 数字滚动 ---------- */
+  function animateCount(el){
+    var target = parseNum(el.getAttribute('data-tb-count'));
+    var start = 0, dur = 1200, t0 = null;
+    function step(ts){
+      if(!t0) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1);
+      var val = Math.floor(start + (target - start) * (1 - Math.pow(1 - p, 3)));
+      el.textContent = val.toLocaleString('zh-CN');
+      if(p < 1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString('zh-CN');
+    }
+    requestAnimationFrame(step);
+  }
+  var counters = document.querySelectorAll('[data-tb-count]');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          animateCount(en.target);
+          io.unobserve(en.target);
+        }
+      });
+    }, {threshold:.4});
+    counters.forEach(function(c){ io.observe(c); });
+  }else{
+    counters.forEach(function(c){ c.textContent = parseNum(c.getAttribute('data-tb-count')).toLocaleString('zh-CN'); });
+  }
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = document.getElementById('tb-totop');
+  if(topBtn){
+    window.addEventListener('scroll', function(){
+      topBtn.classList.toggle('show', window.scrollY > 620);
+    }, {passive:true});
+    topBtn.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+})();
+</script>
+</body>
+              </html>
